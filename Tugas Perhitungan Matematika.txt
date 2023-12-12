@@ -1,0 +1,85 @@
+#include <iostream>
+
+using namespace std;
+
+void persegi () {
+    int s;
+    int a,b;
+    
+    cout << "rumus sisi x sisi "<<endl; 
+    cout << "input panjang sisi persegi :" ;
+    cin >> a;
+    s = a*a;
+    cout << "sisi persegi adalah :" << a << "x"<< a << "=" << s <<endl;
+}
+
+void lingkaran () {
+    float phi = 3.14;
+    int a,b;
+    
+    cout << "rumus phi x r x 2 "<<endl; 
+    cout << "input jari jari  :" ;
+    cin >> a;
+    b = phi*(a*a);
+    
+    cout << "rumus linggkaran adalah  :" << phi << "x"<< a << "x"<< "2" << "="<< b <<endl;
+}
+
+void persegipanjang () {
+    int q;
+    int p,l;
+    cout << " Rumus persegipanjang  p x l " << endl;
+    cout << " input panjang persegi : ";
+    cin >> p;
+    cout << " input lebar persegi :";
+    cin >> l;
+    q = p*l;
+    
+    cout << "Rumus persegi panjang adalah :" << p << "x"<< l<< "="<< q << endl;
+}
+
+void menu (){
+    int menu; 
+    cout << "----------MENU----------"<<endl
+         << "(0)KELUAR"<< endl
+         << "(1)LUAS PERSEGI "<<endl
+         << "(2)LUAS LINGKARAN "<<endl
+         << "(3)LUAS PERSEGI PANJANG"<<endl
+         << "Pilih Menu (Masukan Angka) : ";
+         cin >> menu;
+    
+     switch (menu) {
+            case 0:
+                cout << "Terimakasih!\n";
+            break;
+
+            case 1:
+                persegi ();
+            break;
+
+            case 2:
+                lingkaran ();
+            break;
+
+            case 3:
+                persegipanjang ();
+            break;
+
+            default:
+                cout << "Menu tidak tersedia!\n";
+            break;
+     }
+}
+
+int main (){
+    char ulang;
+    do {
+        menu ();
+        cout << "\nIngin Menghitung Ulang? (y/n): ";
+        cin >> ulang;
+    }
+    while (ulang =='y' || ulang =='Y'); 
+
+
+    return 0;
+}
