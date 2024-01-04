@@ -1,0 +1,268 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   string Nama , Pilihan , Level , Kemampuanmonster , Serang;
+   string Karakter , Kemampuan , Upgrade , Senjata , Energi;
+   int HP;
+   int Stamina;
+   int Damage;
+   int HPMonster;
+   int DmgMonster;
+   
+   cout << "======================================> SELAMAT DATANG DAN SELAMAT BERJUANG<=================================== "<<endl;
+   
+   cout <<endl;
+   cout <<"                                             MASUKAN NAMA PLAYER: ";
+   cin >> Nama;
+   
+   while (true){
+    
+    cout << "\033[2J\033[1;1H";
+    
+   cout << endl;
+   cout << "                                             SELAMAT BERJUANG "<< Nama<<"!"<<endl;
+   cout << endl; 
+   cout << "======================================= "<<endl;
+   cout << "|| 1.PILIHLAH KARAKTERMU             || "<<endl;
+   cout << "|| 2.PILIHLAH SENJATAMU              || "<<endl;
+   cout << "|| 3.UPGRADE SENJATA                 || "<<endl;
+   cout << "|| 4.TAMBAH STAMINA                  || "<<endl;
+   cout << "|| 5.LAWAN MUSUH                     || "<<endl;
+   cout <<" =======================================";
+   
+   cout << endl;
+   cout <<" PILIHLAH MENU :";
+   cin >> Pilihan;
+   
+    cout << "\033[2J\033[1;1H";
+   
+   if (Pilihan == "1"){
+       
+       cout <<endl;
+       cout << "1 SUPER DITTO"<<endl;
+       cout << "2 KING GIBRAN"<<endl;
+       cout << "3 TANK ZYMAR"<<endl;
+       
+       cout <<endl;
+       cout <<"SIAPAKAH JAGOANMU :";
+       cin >> Karakter;
+       
+       if (Karakter == "1"){
+          Kemampuan = "AHLI SENJATA";
+          HP = 1500;
+          Damage = 800;
+          Stamina = 90;
+          
+        }  
+        else if (Karakter == "2"){
+            Kemampuan = "AHLI PANAH";
+            HP = 1200;
+            Damage = 750;
+            Stamina = 100;
+            
+        }   
+        else if (Karakter == "3"){
+            Kemampuan = "AHLI MEDIS";
+            HP = 1700;
+            Damage = 700;
+            Stamina = 110;
+            
+        }    
+            cout << "KAMU MEMILIH " << Kemampuan<<endl;
+            cout << "DENGAN HP " << HP<<endl;
+            cout << "DENGAN DAMAGE "<< Damage<<endl;
+            cout << "STAMINA "<< Stamina<<endl;
+            
+            continue;
+        
+        
+   }
+   if (Pilihan == "2"){
+       
+       cout << endl;
+       cout << "==============> MENU SENJATA <=================\n";
+       cout << " 1. KUJANG"<<endl;
+       cout << " 2. TERONTONG"<<endl;
+       cout << " 3. CELURIT"<<endl;
+       
+       cout << endl;
+       cout << " PILIH SENJATAMU :";
+       cin >> Senjata;
+       
+       if (Senjata == "1 KUJANG"){
+           Damage += 500;
+           
+        }   
+        else if (Senjata == "2 TERONTONG"){
+            Damage += 500;
+            
+        }   
+        else if (Senjata == "3 CELURIT"){
+            Damage += 850;
+            
+        }
+           continue;
+        
+   }
+   
+   if  (Pilihan == "3"){
+       
+       cout <<endl;
+       cout << "==============> SILAHKAN UPGRADE  <================"<<endl;
+       cout << " 1. UPGRADE SENJATA ATTACK 100 "<<endl;
+       cout << " 2. UPGRADE SENJATA ATTACK 120 "<<endl;
+       cout << " 3. UPGRADE SENJATA ATTACK 130 "<<endl;
+       
+       cout <<endl;
+       cout <<" SILAHKAN UPGRADE SENJATAMU : ";
+       cin >> Upgrade;
+       
+       if (Upgrade == "1"){
+           Damage += 100;
+       }
+       
+       else if (Upgrade == "2"){
+           Damage += 120;
+       }
+       
+       else if (Upgrade == "3"){
+           Damage += 130;
+       }
+       
+       continue;
+   }
+   
+   if (Pilihan == "4"){
+       
+       cout <<endl;
+       cout << "================>TAMBAH STAMINA ANDA SEKARANG<================= !"<<endl;
+       cout << "1. TAMBAH STAMINA 50"<<endl;
+       cout << "2. TAMBAH STAMINA 30"<<endl;
+       cout << "3. TAMBAH STAMINA 20"<<endl;
+       
+       cout << endl;
+       cout << " TAMBAH STAMINA SEKARANG ! :";
+       cin >> Energi;
+       
+       if (Energi == "1"){
+           Stamina += 50;
+       }
+       else if (Energi == "2"){
+           Stamina += 30;
+       }
+       
+       else if (Energi == "3"){
+           Stamina += 10;
+       }
+       
+       continue;
+       
+   }
+   
+   cout << endl;
+   cout <<"==================================="<<endl;
+   cout << "JAGOANMU = "<< Kemampuan << endl;
+   cout << "SENJATAMU = "<< Senjata << endl;
+   cout << "HP = "<< HP << endl;
+   cout <<" DAMAGE = "<< Damage << endl;
+   cout << "STAMINA = "<< Stamina<< endl;
+   
+   
+
+   
+   if ( Pilihan == "5"){
+       
+       cout <<endl;
+       cout << " ===============>PILIH MUSUH<=============== !!"<<endl;
+       cout <<endl;
+       
+       cout << " 1. >> EASY <<"<<endl;
+       cout << " 2. >> MEDIUM <<"<<endl;
+       cout << " 3. >> HARD <<"<< endl;
+       
+       cout << endl;
+       cout << " PILIH LEVEL :";
+       cin >> Level;
+       
+       
+       if (Level == "1"){
+           Kemampuanmonster = " MENGIGIT ";
+           HPMonster = 1300;
+           DmgMonster = 100;
+       }
+       
+       else if (Level == "2"){
+           Kemampuanmonster = " BERACUN ";
+           HPMonster = 2000;
+           DmgMonster = 200;
+       }
+       
+       else if (Level == "3"){
+           Kemampuanmonster = " KUAT DAN BERBAHAYA ";
+           HPMonster = 4000;
+           DmgMonster = 250;
+           
+        }
+       
+    }
+   
+     cout << endl;
+     cout << " SERANG SEKARANG MUSUH!!!!" << endl;
+     cout << " MUSUH MENDEKAT !!!" << endl;
+     cout << " ===================================" << endl;
+     
+     
+     while (true){
+     cout << endl;
+     cout << " 1. SERANG " << endl;
+
+     cout << endl;
+     cout << "PILIH :";
+     cin >> Serang;
+      cout << "\033[2J\033[1;1H";
+
+    if (Serang == "1") {
+    HPMonster -= Damage;
+    HP -= DmgMonster;
+
+    cout <<endl;
+    cout << " MUSUH MENGALAMI KERUSAKAN SEBESAR " << Damage << "!" << endl;
+    cout << " SISA HP MUSUH "<< HPMonster <<"!"<< endl;
+    cout << " KAMU MENGALAMI KERUSAKAN SEBESAR " << DmgMonster << "!" << endl;
+    cout << " SISA HP MU "<< HP << "!"<< endl;
+
+    }
+    
+    if (HPMonster <= 0) {
+        cout<<endl;
+        cout << " KAMU MENANG! MUSUH TELAH DIBUANG!" << endl;
+        
+    } else if (HP <= 0) {
+        cout << " KAMU KALAH! SEMANGAT UNTUK PERTARUNGAN SELANJUTNYA!" << endl;
+        
+    }
+    
+    if  (HPMonster <= 0 || HP <= 0) {
+                break; 
+    }
+        
+    }
+    
+    
+    cout << "APAKAH ANDA INGIN BERMAIN LAGI? (y/n): ";
+            char playAgain;
+            cin >> playAgain;
+
+            if (playAgain != 'y' && playAgain != 'Y') {
+                break;
+   
+   
+    return 0;
+    
+   }
+   
+}
+}
