@@ -1,0 +1,262 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int lahir , umur , pilihan  , tanggal , sisa ,nilai , nilairupiah , bulan, nilaidolar , nim ; 
+   string kelahiran , jenis , nama , grade , status , ulang;
+   int pecahan[] = {100000, 20000, 10000, 5000, 2000, 1000, 500};
+   int nilaitukar = 15000;
+   
+   
+    while (true){
+     
+   
+   cout << "================ MENU AWAL ==================";
+   cout <<endl;
+   cout << " 1. MENGHITUNG UMUR "<<endl;
+   cout << " 2. MENGHITUNG UANG PECAHAN "<<endl;
+   cout << " 3. KONVERSI NILAI KE HURUF  "<<endl;
+   cout << " 4. KALO MAU KELUAR YAUDA KELUAR"<<endl;
+   cout << "=============================================";
+   cout <<endl;
+   cout << " PILIHLAH MENU YANG INGIN ANDA PILIH : ";
+   cin >> pilihan;
+   
+   
+   cout << "\033[2J\033[1;1H";
+   
+    
+   
+   if (pilihan == 1){
+       
+     cout<<" MASUKAN TAHUN KELAHIRAN ANDA  : ";
+     cin>> lahir;
+     
+     cout << " MASUKAN BULAN KELAHIRAN ANDA :";
+     cin >> bulan;
+     
+     cout << " TANGGAL KELAHIRAN ANDA :";
+     cin >> tanggal;
+     
+     switch (bulan) {
+         case 1 :
+         jenis = "JANUARI";
+         break ;
+         
+         case 2 :
+         jenis = "FEBRUARI";
+         break;
+         
+         case 3 :
+         jenis = "MARET";
+         break;
+         
+         case 4 :
+         jenis = "APRIL";
+         break;
+         
+         case 5 :
+         jenis = "MEI";
+         break;
+         
+         case 6 :
+         jenis = "JUNI";
+         break;
+         
+         case 7 :
+         jenis = "JULI";
+         break;
+         
+         case 8 :
+         jenis = "AGUSTUS";
+         break;
+         
+         case 9 :
+         jenis = "SEPTEMBER";
+         break;
+         
+         case 10 :
+         jenis = "OKTOBER";
+         break;
+         
+         case 11 :
+         jenis = "NOVEMBER";
+         break;
+         
+         case 12 :
+         jenis = "DESEMBER";
+         
+         break;
+        }
+     
+    
+     umur = 2024 - lahir;
+     cout << endl;
+     cout << "================= HASIL PERHITUNGAN UMUR ANDA ===================="<<endl;
+     cout << " UMUR ANDA SEKARANG ADALAH : " << umur << endl;
+     cout << " ANDA LAHIR PADA  TANGGGAL " << " " << tanggal  << " "<< " BULAN " << " " << jenis << " " << lahir << " " << endl;
+     cout <<endl;
+     
+     continue ;
+    }
+    
+    
+    if ( pilihan == 2 ){
+        
+        
+    cout << " 1.MENGGUNAKAN RUPIAH " << endl;
+    cout << " 2.MENGGUNAKAN DOLAR " << endl;
+    cout << " YANG MANA YANG ANDA PILIH :";
+    cin >> pilihan;
+    
+        if ( pilihan == 1 ){
+    cout << "==============================================="<<endl;
+    cout << " PECAHAN YANG ADA !"<<endl;
+    cout << " Rp. 100000 "<<endl;
+    cout << " Rp. 20000"<<endl;
+    cout << " Rp. 10000"<<endl;
+    cout << " Rp. 5000"<<endl;
+    cout << " Rp. 2000"<<endl;
+    cout << " Rp. 1000"<<endl;
+    cout << " Rp. 500"<<endl;
+    cout << "==============================================="<<endl;
+    cout << " MASUKAN NILAI UANG ANDA  (Dalam Rupiah): Rp. ";
+    cin >> nilai ;
+
+    for (int i = 0; i < 7; ++i) 
+    {
+        int jumlah = nilai / pecahan[i];
+
+        if (jumlah > 0)
+        {
+            cout << "LEMBAR UANG  " << pecahan[i] << ": " << jumlah;
+            if (pecahan[i] >= 1000) 
+                cout << " LEMBAR ";
+            else // 
+                cout << " KOIN";
+            cout << endl;
+        }
+
+        sisa = nilai % pecahan[i];
+        nilai = sisa;
+    }
+    
+            
+    }
+    
+    if (pilihan == 2){
+    
+    cout << "==============================================="<<endl;
+    cout << " PECAHAN DOLAR !"<<endl;
+    cout << " Rp. 1$ "<<endl;
+    cout << " Rp. 2$"<<endl;
+    cout << " Rp. 5$"<<endl;
+    cout << " Rp. 10$"<<endl;
+    cout << " Rp. 15$"<<endl;
+    cout << " Rp. 20$"<<endl;
+    cout << " Rp. 100$"<<endl;
+    cout << "==============================================="<<endl;
+      
+    cout << " MASUKAN NILAI UANG ANDA  ( Dalam Dolar ) : $ " ;
+    cin >> nilaidolar ;
+    
+    nilairupiah = nilaidolar * nilaitukar ;
+    cout << " NILAI PECAHAN RUPIAH ANDA Rp." << nilairupiah << endl;
+    cout << " PECAHAN DALAM RUPIAH :"<< endl;
+    cout <<endl;
+    
+     for (int i = 0; i < 7; ++i) {
+        int lembar = nilairupiah / pecahan[i];
+
+        if (lembar > 0) {
+        cout << " LEMBARAN UANG Rp" << pecahan[i] << ": " << lembar << " LEMBAR " << std::endl; 
+    }
+    
+     sisa = static_cast<int>(nilairupiah) % pecahan[i];
+        nilairupiah = sisa;
+        cout <<endl;
+     
+    }
+    
+    }
+     continue;
+    }
+    
+    
+    if ( pilihan == 3){
+        
+        cout << " MASUKAN NAMA ANDA  :";
+        cin >> nama;
+        cout << " MASUKAN NIM ANDA   :";
+        cin >> nim;
+        
+        cout << " MASUKAN NILAI ANDA :";
+        cin >> nilai;
+    
+    if (nilai >= 90) {
+        grade = "A";
+    } else if (nilai >= 80) {
+        grade = "B";
+    } else if (nilai >= 70) {
+        grade = "C";
+    } else if (nilai >= 60) {
+        grade = "D";
+    } else if (nilai >= 0) {
+        grade = "E";
+    }
+    
+    cout << " NILAI ANDA :" <<nilai<<endl;
+    cout << " GRADE      :" << grade << endl;
+    
+    
+     if (grade == "A" || grade == "B" || grade == "C") {
+        status = "LULUS";
+    } else {
+        status =" TIDAK LULUS HARUS MENGULANG MATA KULIAH  ";
+    
+    }
+    cout << " NAMA       :" << nama << endl;
+    cout << " NIM        :" << nim << endl;
+    cout << " STATUS     :" << status << endl;
+    cout <<endl;
+    
+    continue;
+    }
+    
+    if (pilihan == 4){
+        
+        cout <<"==================================================="<<endl;
+        cout <<"                 TERIMAKSIH LOPYU "<<endl;
+        cout <<"        TERIMAKASIH JUGA SEHAT SEHAT ORANG BAIK :)"<<endl;
+        cout <<"==================================================="<<endl;
+        cout <<endl;
+        cout<< " APAKAH ANDA INGIN KEMBALI KE MENU AWAL ? (y/n) : ";
+        char ulang;
+        cin >> ulang;
+        
+        if (ulang == 'Y' || ulang == 'y'){
+            cout << "\033[2J\033[1;1H";
+            continue;
+        }
+        else if ( ulang =='N' || ulang == 'n'){
+            break;
+        }
+        
+    }
+    
+    }
+    
+
+
+    return 0;
+ }
